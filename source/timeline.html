@@ -1,0 +1,49 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>My Like</title>
+
+
+    <link href="timeline_all.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="timeline_timeline.css" media="screen" rel="stylesheet" type="text/css" />
+    <script src="jq.min.js" type="text/javascript" charset="UTF-8"></script>
+    <script src="timeline.min.js" type="text/javascript" charset="UTF-8"></script>
+
+    <style type="text/css">.hide{display:none}.like_desc{margin-left:5px;}.like_button{margin-left:5px;background: #ECEEF5;border-radius: 3px;border: 1px solid #CAD4E7;cursor: pointer;padding: 2px 2px 2px;white-space: nowrap;color: #3B5998;}.like_button:hover{border-color:#9dacce}.like_button.liked{background-color: #EEE;border-color: #DDD;color: #AAA;}.sp_like{background-image:url(http://bbs.nju.edu.cn/file/W/Warrior/like.png);background-repeat:no-repeat;display:inline-block;height:14px;width:14px;background-position: -0px -45px;position: relative;top: 3px;margin-right: 3px;}.like_button.liked:hover{border-color:#ccc}.like_desc a.like_style{color:#3D6CBE}.like_desc{color:#3D6CBE}.like_button.liked .sp_like{background-position: -0px -15px;}.like_button.liked:hover .sp_like{background-position: -0px -30px;}</style>
+  </head>
+
+  <body class="index">
+
+    <div class="container">
+
+      <ol class="timeline clearfix" id='timeline'>
+        <li class="spine">
+
+        </li>
+
+        <li class="highlight">
+          <i class="pointer"></i>
+          <div class="unit">
+
+            <div class="storyUnit">
+              <p><strong id="header">My Timeline</strong></p>
+              <p>觉得某个Lilyer靠谱，觉得某篇帖子或是回复不错？点击"赞一下" 就可以在这里看到!<span class="like_button hide" onclick="tl.togglelike(this)"><i class="sp_like"></i>赞一个</span><span class="like_desc"></span></p>
+            </div>
+
+          </div>
+        </li>
+
+
+      </ol>
+
+    </div>
+
+  </body>
+</html>

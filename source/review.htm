@@ -1,0 +1,93 @@
+<html><head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<link rel=stylesheet type=text/css href="http://bbs.nju.edu.cn/images/bbs.css?Net_3">
+<style type='text/css'>
+img{
+    border:2px solid #eee;
+}
+</style>
+</head>
+<center>
+南京大学小百合站 -- 管理预定回复
+<hr color=green>
+<table width=640>
+<tr bgcolor='#f0f0f0'><td>标题</td><td>链接</td><td>回复</td><td>操作</td></tr>
+</table>
+<script type="text/javascript">
+__g = function(n) {
+    var v=localStorage.getItem(n);
+    return  ( v && (v != 'undefined') ) ? v : '';
+}
+__s = function(n,v) {
+    return localStorage.setItem(n,v);
+}
+rewrite = function(str)
+{
+    var tmp="[";
+    for(var i=0;!isNew && i<_sd.length;i++)
+    {
+        if( !_sd[i].hasOwnProperty('tl') ){
+            _sd[i].tl = '';
+        }
+        tmp+="{u:'"+_sd[i].u+"',c:"+_sd[i].c+",r:"+_sd[i].r+",t:"+_sd[i].t+",tl:'"+_sd[i].tl+"'},";
+    }
+    if(str!="")
+        tmp += str+",";
+    if(tmp.length != 1)
+    {tmp = tmp.substring(0,tmp.length-1)+"]";_sd = eval(tmp);isNew=false;}
+    else
+    {tmp="";isNew=true;}
+    _s("m_info",tmp);
+}
+removeT = function(e,i)
+{
+    _sd.splice(i,1);
+    rewrite("");
+    e.parentNode.parentNode.parentNode.removeChild(e.parentNode.parentNode);
+}
+var _sd;
+var isNew = true;
+var p = document.getElementsByTagName("table")[0];
+if(__g("m_info")!='')
+{
+    _sd=eval(__g("m_info"));
+    isNew = false;
+    for(var i=0;i<_sd.length;i++)
+    {
+        if( !_sd[i].hasOwnProperty('tl') ){
+            _sd[i].tl = '';
+        }
+        p.innerHTML += ["<tr><td>",_sd[i].tl,"</td><td><a href='../../../",_sd[i].u,"' ",(_sd[i].r==1 ? "style='color:#ff0000'":"")," >",_sd[i].u,"</a></td><td>",_sd[i].c,"</td><td><a href='javascript:;' onclick='removeT(this,"+i+")'>不再关注</a></td></tr>"].join('');
+    }
+    var tmp="[";
+    for(var i=0;i<_sd.length;i++)
+    {
+        tmp+="{u:'"+_sd[i].u+"',c:"+_sd[i].c+",r:0,t:"+_sd[i].t+",tl:'"+_sd[i].tl+"'},";
+    }
+    if(tmp.length != 1)
+    {tmp = tmp.substring(0,tmp.length-1)+"]";}
+    else
+    {tmp="";}
+    __s("m_info",tmp);
+}
+</script>
+<hr color=green>
+<p>南京大学小百合站 -- 管理预定回复 -- 指引说明:</p>
+<p>在<b>主题贴阅读界面顶端</b> 有[回帖预定]按钮 单击即可订阅此贴回复 之后此主题有新的回复会通知你啦～</p>
+
+<img src='show_dy.jpg'/>
+
+<p>如果此帖已经订阅 则显示[取消预定] 点击则取消订阅</p>
+
+<img src='show_qx.jpg'/>
+
+<p>在最下脚的状态页面 会显示出回帖的预定信息 一旦有新的回复 则会<b>自动提醒</b></p>
+
+<img src='show_hf.jpg'/>
+
+<p>在本页则可以管理已经订阅的主题 可以删除不再需要通知的主题(<font color=red>默认会在订阅3天之后自动删除)</font></p>
+
+<hr color=green>
+
+<p>有啥问题或是想法？请<a href='http://www.bigline.cn/blog/2011/01/01/lily/' style='color:#ff0000' target=_blank>猛击此处进行反馈</a></p>
+</html>
